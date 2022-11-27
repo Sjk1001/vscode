@@ -93,9 +93,10 @@ print(apple >= 2 )
 
 # if and else
 apple = 10
-if apple >= 2 #食べるのでリンゴのかずをへらす。
+if apple >= 2 :
+#食べるのでリンゴのかずをへらす。
     apple -= 1 
     print('リンゴを食べました！のこりのかずは' + str(apple) + 'こです。')
 else :
     apple += 1 #買うのでリンゴの数を増やす
-    print('リンゴを買いました！残りの数は' + str(apple)　
+    print('リンゴを買いました！残りの数は' + str(apple) + 'こです')
