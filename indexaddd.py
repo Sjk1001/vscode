@@ -61,3 +61,41 @@ print(type(data1))
 data2 = False
 print(data2)
 print(type(data2))
+
+#The type of number(str int float)
+num = 5
+num = str(num)
+text = 'りんごは' + num + 'こあります。'
+print(text)
+
+num = 6
+text = 'りんごは' + str(num) + 'こあります。'
+print(text)
+
+num = '1111'
+int_num  = int(num)
+float_num = float(num)
+print(int_num)
+print(float_num)
+print(type(int_num))
+print(type(float_num))
+
+apple = '100'
+num = 4 
+apple = int(apple)
+text = 'あなたの合計金額は' + str(apple * num) + '円です'
+print(text)
+
+#持っているリンゴの数
+apple = 12
+# [apple >= 12]は条件を表し、apple変数は２以上なので、True
+print(apple >= 2 )
+
+# if and else
+apple = 10
+if apple >= 2 #食べるのでリンゴのかずをへらす。
+    apple -= 1 
+    print('リンゴを食べました！のこりのかずは' + str(apple) + 'こです。')
+else :
+    apple += 1 #買うのでリンゴの数を増やす
+    print('リンゴを買いました！残りの数は' + str(apple)　
