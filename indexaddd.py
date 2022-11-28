@@ -100,3 +100,70 @@ if apple >= 2 :
 else :
     apple += 1 #買うのでリンゴの数を増やす
     print('リンゴを買いました！残りの数は' + str(apple) + 'こです')
+
+weather = '雨'
+if weather == '雨' :
+    print(weather + 'なので、電車で行きます。')
+else :
+    print(weather + 'なので、自転車でいきます。')
+
+weather = '晴れ'
+if weather == '雨' :
+    print(weather + 'なので、電車で行きます。')
+else :
+    print(weather + 'なので、自転車でいきます。')
+
+# elseが設定されてないので、なにもひょおじされません。
+apple = 1
+if apple >= 2 :
+    apple -= 1 
+    print('リンゴを食べました！のこりのかずは' + str(apple) + 'こです。')
+
+
+#条件が三つになった場合　上から優先で判断し実行します
+apple = 3
+if apple >=4 :
+    apple -= 1
+    print('リンゴをたべました。残りの数は' + str(apple) + 'こです。')
+elif apple >=2  :
+    apple += 1
+    print('リンゴを1こかいました！残りの数は' + str(apple) + 'こです。')
+else :
+    apple += 2
+    print('リンゴを2こかいました！残りの数は' + str(apple) + 'こです。')
+
+# IF套娃
+apple = 12
+if apple >= 10 :
+    if apple < 20 :
+        apple -= 10
+        print('リンゴを10こたべました！残りの数は' + str(apple) + 'こです。')
+
+#通过and或or来简化上段类型的代码
+apple = 12
+if apple >= 10 and apple < 20 :
+    apple -= 10
+    print('リンゴを10こたべました！残りの数は' + str(apple) + 'こです。')
+
+#Repeat
+apple = 6
+while apple != 0 :
+    apple -= 2
+    print('リンゴをたべました！残りの数は' + str(apple) + 'こです。')
+
+#while and if
+apple = 6
+while apple != 0 :
+    apple -= 2
+    print('リンゴをたべました！残りの数は' + str(apple) + 'こです。')
+    if apple - 2 == 0 :
+        print('明日でリンゴがなくなります。')
+
+# 繰り返しを止める
+apple = 6
+while apple != 0 :
+    apple -= 2
+    print('リンゴをたべました！残りの数は' + str(apple) + 'こです。')
+    if apple - 2 == 0 :
+        print('明日でリンゴがなくなります。')
+        break
