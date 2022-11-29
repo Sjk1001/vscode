@@ -167,3 +167,10 @@ while apple != 0 :
     if apple - 2 == 0 :
         print('明日でリンゴがなくなります。')
         break
+
+#List
+list_1 = [0,1,2]
+list_2 = ['象' 'キリン' 'パタン']
+
+print(list_1)
+print(list_2)
