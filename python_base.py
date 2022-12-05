@@ -225,3 +225,7 @@ class Human :
         else :
             return "未成年です"
         
+#関数のインポート
+import scipy.linalg.basic
+
+print(scipy.linalg.basic.solve(2,6))
