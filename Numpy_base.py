@@ -49,3 +49,11 @@ print(arr_2)
 print(arr_3.shape)
 print(arr_3)
 
+#numpy.loadtxt()
+import numpy as np
+
+arr_1 = np.loadtxt("./4002_new_numpy/csv_example.csv",
+                    delimiter=",",  #区切り文字をカンマに指定
+                    skiprows=1,     #最初の1行をスキップ
+                    usecols=[0, 1, 2]) #使用する列の番号
+print(arr_1)
