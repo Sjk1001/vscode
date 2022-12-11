@@ -380,7 +380,7 @@ print('axis=0の場合の最小値')
 print(arr_1.min(axis=0))
 print('-----------------------------------------------------------------------------')
 
-########4.1.5######### MAX&MIN index
+########4.2.1######### 最大値・最小値のインデックス
 arr_1 = np.loadtxt("./4002_new_numpy/weather_tokyo.csv", 
                    delimiter=",",    # カンマ区切りであることを明示
                    skiprows=3,       # 最初の1行を無視
@@ -393,3 +393,30 @@ print(max_temp_index)
 
 #気温が最高だった日の行全体を出力
 print(arr_1[max_temp_index])
+print('-----------------------------------------------------------------------------')
+
+########4.2.2########## ソートされたインデックスを取得
+import numpy as np
+
+
+with open("./4002_new_numpy/weather_tokyo.csv", encoding="shift_jis") as f_in:
+
+    arr_1 = np.loadtxt(f_in,
+                       delimiter=",",
+                       skiprows=3,
+                       usecols=[1, 2, 3, 4])
+
+
+#argsort()函数的作用是将数组按照从小到大的顺序排序，并按照对应的索引值输出。
+#[:,0]就是取所有行的第0个数据
+print(arr_1)
+sorted_temp_index = arr_1[:, 0].argsort()
+print(sorted_temp_index)
+print('気温を低い順に並べたインディックス')
+print(sorted_temp_index[:10])
+print('気温の低い順に10行分参照')
+print(arr_1[sorted_temp_index[:10]])
+print('-----------------------------------------------------------------------------')
+
+########5.1.1########## 一様乱数の生成
+
