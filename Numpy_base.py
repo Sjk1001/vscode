@@ -237,3 +237,159 @@ print(arr_2)
 print('-----------------------------------------------------------------------------')
 
 ########3.1.1#########--データ型
+import numpy as np
+
+list_1 = [1.1, 2.1, 3.1, 4.1, 5.1]
+print(list_1)
+arr_1 = np.array(list_1, dtype=np.uint8) # ここでデータ型を「uint8」に指定
+print(arr_1.dtype)
+print(arr_1)
+print('-----------------------------------------------------------------------------')
+
+########3.1.2#########--in-place処理
+import numpy as np
+
+arr_1 = np.array(range(50))
+arr_2 = arr_1.resize(10, 10) # in-place処理
+print(arr_1)
+print(arr_2)
+
+#sort 昇順
+arr_1 = np.array([4, 0, 6, 3, 1, 7 ,2, 8])
+print(arr_1)
+
+arr_1.sort() # in-place処理
+print('sort 昇順')
+print(arr_1)
+print('--------------------------------------------------')
+#sort 降順
+arr_1 = np.array([4, 0, 6, 3, 1, 7 ,2, 8])
+print(arr_1)
+
+arr_1.sort() # in-place処理
+arr_2 = arr_1[::-1]
+print('sort 降順')
+print(arr_2)
+print('-----------------------------------------------------------------------------')
+
+########3.2.1#########--ビューについて
+import numpy as np
+
+arr_1 = np.array([1, 2, 3, 4, 5])
+arr_2 = arr_1
+
+arr_2[3] = 100 #arr_2の値を変更する
+
+print(arr_1)
+print(arr_2)
+print('--------------------------------------------------')
+arr_1 = np.array([1, 2, 3, 4, 5])
+arr_2 = arr_1[:2]
+
+arr_2[0] = 100
+
+print(arr_1)
+print(arr_2)
+print('-----------------------------------------------------------------------------')
+
+########3.2.2#########コピーについて
+import numpy as np
+
+arr_1 = np.array([1, 2, 3, 4, 5])
+arr_2 = arr_1.copy()
+
+arr_2[3] = 100
+print(arr_1)
+print(arr_2)
+print('-----------------------------------------------------------------------------')
+
+########4.1.1#########引数axisについて 特定轴的合計
+import numpy as np
+
+arr_1 = np.loadtxt("./4002_new_numpy/csv_example.csv",encoding='utf-8',
+                        delimiter=",",
+                        skiprows=1,
+                        usecols=[1, 2])
+print('axis指定しないの場合、すべての要素の合計をとる')
+print(arr_1.sum())
+print('axis=0の場合、0番目の軸に沿って合計をとる')
+print(arr_1.sum(axis=0))
+print('axis=1の場合、1番目の軸に沿って合計をとる')
+print(arr_1.sum(axis=1))
+print('-----------------------------------------------------------------------------')
+
+########4.1.2#########合計
+# ./4002_new_numpy/csv_example.csvを読み込む
+arr_1 = np.loadtxt("./4002_new_numpy/csv_example.csv", encoding="utf-8",
+                   delimiter=",",    # カンマ区切りであることを明示
+                   skiprows=1,       # 最初の1行を無視
+                   usecols=[1, 2])    # 1列目と2列目を使用
+print(arr_1)
+print('axis指定なしの場合')
+print(arr_1.sum())
+
+print('axis=0の場合')
+print(arr_1.sum(axis=0))
+
+print('axis=1の場合')
+print(arr_1.sum(axis=1))
+print('-----------------------------------------------------------------------------')
+
+########4.1.3#########平均
+import numpy as np
+
+list_1 = [1,3,5,7,9,2,4,6,8,10,11,13,15,17,19]
+arr_1 = np.array(list_1)
+
+#arr_1の平均値を求める
+print(arr_1.mean())
+print('--------------------------------------------------')
+arr_1 = np.loadtxt("./4002_new_numpy/csv_example.csv", encoding="utf-8",
+                   delimiter=",",    # カンマ区切りであることを明示
+                   skiprows=1,       # 最初の1行を無視
+                   usecols=[1, 2])    # 1列目と2列目を使用
+print('axis指定なしの場合')
+print(arr_1.mean())
+print('axis=0の場合')
+print(arr_1.mean(axis=0))
+print('axis=1の場合')
+print(arr_1.mean(axis=1))
+print('-----------------------------------------------------------------------------')
+
+########4.1.4#########分散
+arr_1 = np.loadtxt("./4002_new_numpy/csv_example.csv", encoding="utf-8",
+                   delimiter=",",    # カンマ区切りであることを明示
+                   skiprows=1,       # 最初の1行を無視
+                   usecols=[1, 2])    # 1列目と2列目を使用
+print('axis指定なしの場合')
+print(arr_1.var())
+print('axis=0の場合')
+print(arr_1.var(axis=0))
+print('axis=1の場合')
+print(arr_1.var(axis=1))
+print('-----------------------------------------------------------------------------')
+
+########4.1.5######### MAX&MIN
+arr_1 = np.loadtxt("./4002_new_numpy/csv_example.csv", encoding="utf-8",
+                   delimiter=",",    # カンマ区切りであることを明示
+                   skiprows=1,       # 最初の1行を無視
+                   usecols=[1, 2])    # 1列目と2列目を使用
+print('axis=0の場合の最大値')
+print(arr_1.max(axis=0))
+print('axis=0の場合の最小値')
+print(arr_1.min(axis=0))
+print('-----------------------------------------------------------------------------')
+
+########4.1.5######### MAX&MIN index
+arr_1 = np.loadtxt("./4002_new_numpy/weather_tokyo.csv", 
+                   delimiter=",",    # カンマ区切りであることを明示
+                   skiprows=3,       # 最初の1行を無視
+                   usecols=[1, 2, 3, 4])    
+
+max_temp_index = arr_1.argmax(axis=0)[0]
+
+#気温が最高だった日の行数を出力
+print(max_temp_index)
+
+#気温が最高だった日の行全体を出力
+print(arr_1[max_temp_index])
