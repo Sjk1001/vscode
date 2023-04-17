@@ -25,4 +25,3 @@ print("终了状态：",pulp.LpStatus[status])
 print("最適値：",pulp.value(prob.objective))
 print("最適解: (x1,x2)=(",x1.varValue,x2.varValue,")")
 
-
